@@ -1,0 +1,83 @@
+﻿<Page
+    x:Class="IoTCoreDefaultApp.OperatorScreen_110"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTCoreDefaultApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header row -->
+        <Grid x:Name="HeaderRow" Grid.Row="0" Background="#2a2a2a">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="56" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="44" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="38" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Image x:Name="LogoImage" VerticalAlignment="Center" Source="Assets/Logo.png" Stretch="Fill" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <TextBlock Grid.Column="3" x:Name="CurrentTime" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Right" Style="{StaticResource IoTCoreDefaultAppBodyTextBlockStyle}" VerticalAlignment="Center" Padding="0,0,14,0"/>
+
+            <Button Grid.Column="7" x:Name="ShutdownButton" Style="{StaticResource ShutdownButtonStyle}" FontFamily="{StaticResource IconFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" BorderThickness="0" Height="48" Width="48" />
+
+        </Grid>
+        <ScrollViewer Grid.Row="2">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" Grid.Row="1" Text="Operator Main Menu" VerticalAlignment="Center" FontFamily="Arial" FontSize="25"/>
+                <Grid Grid.Row="3" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="ReportDamageButt" Content="Report Damage" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="180" Click="ReportDamageButt_Click"/>
+                    <Button x:Name="ActiaveForkButt" Content="Activate ForkLift" HorizontalAlignment="Center" Grid.Column="3" VerticalAlignment="Center" Width="180" Click="ActiaveForkButt_Click"/>
+                </Grid>
+
+                <Grid Grid.Row="5" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="PersonalButton" Content="Personal Infomation" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="180" Click="PersonalButton_Click"/>
+                    <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Center" Grid.Column="3" VerticalAlignment="Center" Width="180" Click="BackButton_Click"/>
+                </Grid>
+                <Button x:Name="LogoffButt" Content="Log Off" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Width="150" Click="LogoffButt_Click"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

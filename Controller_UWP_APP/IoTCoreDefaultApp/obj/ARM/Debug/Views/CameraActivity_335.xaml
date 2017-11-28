@@ -1,0 +1,79 @@
+﻿<Page
+    x:Class="IoTCoreDefaultApp.CameraActivity_335"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTCoreDefaultApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header row -->
+        <Grid x:ConnectionId='1' x:Name="HeaderRow" Grid.Row="0" Background="#2a2a2a">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="56" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="44" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="38" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Image x:ConnectionId='10' x:Name="LogoImage" VerticalAlignment="Center" Source="Assets/Logo.png" Stretch="Fill" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <TextBlock x:ConnectionId='8' Grid.Column="3" x:Name="CurrentTime" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Right" Style="{StaticResource IoTCoreDefaultAppBodyTextBlockStyle}" VerticalAlignment="Center" Padding="0,0,14,0"/>
+
+            <Button x:ConnectionId='9' Grid.Column="7" x:Name="ShutdownButton" Style="{StaticResource ShutdownButtonStyle}" FontFamily="{StaticResource IconFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" BorderThickness="0" Height="48" Width="48" />
+
+        </Grid>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+        </Grid>
+        <ScrollViewer Grid.Row="2">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+                    <StackPanel>
+                        <TextBlock x:ConnectionId='5' Name="PreviewTitle" Grid.Row="0" Grid.Column="0" Text="Camera Preview"  Height="30" HorizontalAlignment="Center" Margin="0,20,0,0" Visibility="Visible"/>
+                        <Canvas x:ConnectionId='6' Name="PreviewCanvas" Grid.Row="1" Grid.Column="0" Width="400" Height="200" Background="Gray"  Margin="0,0,0,0" Visibility="Visible">
+                            <CaptureElement x:ConnectionId='7' x:Name="previewElement" Width="400" Height="200" HorizontalAlignment="Left" Visibility="Visible"/>
+                        </Canvas>
+                    </StackPanel>
+                </StackPanel>
+                <ToggleSwitch x:ConnectionId='2' x:Name="CameraToggle" Header="Camera Activate" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center"                               />
+                <TextBlock x:ConnectionId='3' x:Name="CameraStatus" HorizontalAlignment="Center" Grid.Row="5" Text="" VerticalAlignment="Center"/>
+                <Button x:ConnectionId='4' x:Name="Back" Content="Back" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Bottom" Width="200"                   />
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>
+

@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="IoTCoreDefaultApp.CheckListActive_325"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTCoreDefaultApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header row -->
+        <Grid x:Name="HeaderRow" Grid.Row="0" Background="#2a2a2a">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="56" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="44" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="38" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Image x:Name="LogoImage" VerticalAlignment="Center" Source="Assets/Logo.png" Stretch="Fill" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <TextBlock Grid.Column="3" x:Name="CurrentTime" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Right" Style="{StaticResource IoTCoreDefaultAppBodyTextBlockStyle}" VerticalAlignment="Center" Padding="0,0,14,0"/>
+
+            <Button Grid.Column="7" x:Name="ShutdownButton" Style="{StaticResource ShutdownButtonStyle}" FontFamily="{StaticResource IconFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" BorderThickness="0" Height="48" Width="48" />
+
+        </Grid>
+        <ScrollViewer Grid.Row="2">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" Grid.Row="1" Text="Checklist Activated" VerticalAlignment="Center"/>
+                <ToggleSwitch x:Name="CheckListToggle" Header="Checklist" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center"/>
+                <Button x:Name="Back" Content="Back" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="200" Click="Back_Click"/>
+            </Grid>
+        </ScrollViewer>
+
+    </Grid>
+</Page>

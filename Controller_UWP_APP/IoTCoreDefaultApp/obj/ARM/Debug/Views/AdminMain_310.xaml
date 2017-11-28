@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="IoTCoreDefaultApp.AdminMain_310"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTCoreDefaultApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header row -->
+        <Grid x:ConnectionId='1' x:Name="HeaderRow" Grid.Row="0" Background="#2a2a2a">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="56" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="44" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="38" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Image x:ConnectionId='15' x:Name="LogoImage" VerticalAlignment="Center" Source="Assets/Logo.png" Stretch="Fill" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <TextBlock x:ConnectionId='8' Grid.Column="3" x:Name="CurrentTime" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Right" Style="{StaticResource IoTCoreDefaultAppBodyTextBlockStyle}" VerticalAlignment="Center" Padding="0,0,14,0"/>
+
+            <Button x:ConnectionId='9' Grid.Column="5" x:Name="SettingsButton" Style="{StaticResource ShutdownButtonStyle}" Content="{StaticResource IconSettings}" FontFamily="{StaticResource IconFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent"                                BorderThickness="0" Height="48" Width="48" />
+
+            <Button x:ConnectionId='10' Grid.Column="7" x:Name="ShutdownButton" Style="{StaticResource ShutdownButtonStyle}" Content="{StaticResource IconShutdown}" FontFamily="{StaticResource IconFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"                                Background="Transparent" BorderThickness="0" Height="48" Width="48" />
+            <Popup x:ConnectionId='11' Grid.Column="7" x:Name="ShutdownDropdown" HorizontalAlignment="Left" IsLightDismissEnabled="True" VerticalOffset="72"                                 >
+                <ListView x:ConnectionId='12' x:Name="ShutdownListView" Background="White" ItemContainerStyle="{StaticResource IoTCoreDefaultAppShutdownListViewItemStyle}" BorderThickness="2.0" BorderBrush="{StaticResource ShutdownBorderBrush}"                                        IsItemClickEnabled="True" IsTabStop="True" >
+                    <ListViewItem HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Height="40" Margin="0,5,0,0" >
+                        <TextBlock x:ConnectionId='14' x:Name="ShutdownOption" Text="ShutDown" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource IoTCoreDefaultAppDarkBodyTextBlockStyle}" Margin="20,0,20,0"/>
+                    </ListViewItem>
+                    <ListViewItem HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Height="40" Margin="0,0,0,5" >
+                        <TextBlock x:ConnectionId='13' x:Name="RestartOption" Text="Restart" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource IoTCoreDefaultAppDarkBodyTextBlockStyle}" Margin="20,0,20,0"/>
+                    </ListViewItem>
+                </ListView>
+            </Popup>
+        </Grid>
+
+        <!-- Content row -->
+        <ScrollViewer Grid.Row="2" HorizontalScrollMode="Disabled" >
+            <Grid Margin="20,0" HorizontalAlignment="Center" Width="300">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock  Grid.Row="1" TextWrapping="Wrap" Text="Administrator main menu" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Button x:ConnectionId='2' Grid.Row="3" x:Name="CameraActivity" Content="Camera Activate" HorizontalAlignment="Center" Width="140"                             />
+                <Button x:ConnectionId='3' Grid.Row="5" x:Name="LoadDB" Content="Load Database" HorizontalAlignment="Left" Width="140"                     />
+                <Button x:ConnectionId='4' Grid.Row="5" x:Name="TiltFunc" Content="Tilt Function" HorizontalAlignment="Right" Width="140"                        />
+                <Button x:ConnectionId='5' Grid.Row="7" x:Name="Checklist" Content="Checklist Activate" HorizontalAlignment="Left" Width="140"                        />
+                <Button x:ConnectionId='6' Grid.Row="7" x:Name="TiltSensorActivity" Content="Tilt Sensor Activity" HorizontalAlignment="Right" Width="140"                                  />
+                <Button x:ConnectionId='7' Grid.Row="9" x:Name="LogOffButton" Content="Log off" HorizontalAlignment="Center" Width="140"                           />
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>
+

@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="IoTCoreDefaultApp.LoginScreen_10"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTCoreDefaultApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header row -->
+        <Grid x:Name="HeaderRow" Grid.Row="0" Background="#2a2a2a">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Image x:Name="LogoImage" VerticalAlignment="Center" Source="Assets/Logo.png" Stretch="Fill" HorizontalAlignment="Left"/>
+            </Grid>
+            <TextBlock Grid.Column="3" x:Name="CurrentTime" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Right" Style="{StaticResource IoTCoreDefaultAppBodyTextBlockStyle}" VerticalAlignment="Center" Padding="0,0,14,0"/>
+            <Image x:Name="WifiImage" Grid.Column="4" VerticalAlignment="Center" Source="ms-appx://Assets/WIFI_ON.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+        </Grid>
+
+        <!-- Content row -->
+        <ScrollViewer Grid.Row="2" HorizontalScrollMode="Disabled" VerticalScrollMode="Disabled">
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="250" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="AUTO" />
+                </Grid.RowDefinitions>
+                
+                <StackPanel x:Name="LoadingPage" Grid.Row="1" Visibility="Visible" >
+                    <TextBlock Text="" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Downloading Settings from Server..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ProgressBar x:Name="LoadingProgress" Height="15" Width="600" Maximum="50" />
+                </StackPanel>
+                <Image x:Name="Arrow" Grid.Row ="2" Stretch="Fill" Source="ms-appx:///Assets/RFID.gif" Width="250" Visibility="Collapsed" />
+                <TextBlock Grid.Row ="3" Text="HOLD THE RFID TAG TO THE READER!" Foreground="{StaticResource AppBarForeground}" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,10" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" LineHeight="10" FontSize="30" />
+                <TextBlock Grid.Row ="5" x:Name="Statustxt" Text="This Card or User is not registered on this Machine." Foreground="{StaticResource AppBarForeground}" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Center" LineHeight="10" FontSize="20" Visibility="Collapsed" />
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

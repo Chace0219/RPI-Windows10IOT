@@ -1,0 +1,89 @@
+﻿<Page
+    x:Class="IoTCoreDefaultApp.Supervisor_200"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTCoreDefaultApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header row -->
+        <Grid x:ConnectionId='1' x:Name="HeaderRow" Grid.Row="0" Background="#2a2a2a">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="56" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="44" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="38" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Image x:ConnectionId='9' x:Name="LogoImage" VerticalAlignment="Center" Source="Assets/Logo.png" Stretch="Fill" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <TextBlock x:ConnectionId='7' Grid.Column="3" x:Name="CurrentTime" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Right" Style="{StaticResource IoTCoreDefaultAppBodyTextBlockStyle}" VerticalAlignment="Center" Padding="0,0,14,0"/>
+
+            <Button x:ConnectionId='8' Grid.Column="7" x:Name="ShutdownButton" Style="{StaticResource ShutdownButtonStyle}" FontFamily="{StaticResource IconFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" BorderThickness="0" Height="48" Width="48" />
+
+        </Grid>
+        <ScrollViewer Grid.Row="2">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" Grid.Row="1" Text="Reset Tilt Alarm" VerticalAlignment="Center" FontFamily="Arial" FontSize="25"/>
+                <TextBlock x:ConnectionId='2' x:Name="StatusTxt" Grid.Row="3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Welcome Supervisor User Name:Supervisor1 UserID: " VerticalAlignment="Top" Height="80" Width="300"/>
+                <Grid Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                        <ColumnDefinition Width="20"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="The Count of Tilt Resets:" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock x:ConnectionId='6' x:Name="ResetCnt" Text="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="11" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:ConnectionId='4' x:Name="ResetButton" Content="Reset Tilt Alarm" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="180" IsEnabled="False"                           />
+                    <Button x:ConnectionId='5' x:Name="LogoffButton" Content="Log Off" HorizontalAlignment="Center" Grid.Column="3" VerticalAlignment="Top" Width="180"                            />
+                </Grid>
+                <TextBlock x:ConnectionId='3' x:Name="NotifyTxt" Text="You can't Reset Alarm Anymore! Administrator Can only reset it! Otherwise, you have to wait until next shifting!" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+
+            </Grid>
+        </ScrollViewer>        
+    </Grid>
+</Page>
+
